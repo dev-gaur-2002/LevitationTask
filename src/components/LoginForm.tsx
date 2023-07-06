@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import {useNavigate} from 'react-router-dom'
+import ForgotPassword from "./ForgotPassword";
 import axios from 'axios'
-// import validator from 'validator'
+import { Link } from "react-router-dom";
 
 
 const LoginForm:React.FC = () => {
@@ -61,6 +62,7 @@ const LoginForm:React.FC = () => {
                     } */}
                 <input type="password" name='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
                 <button type="submit">Login</button>
+                <Link to='/forgot'><span> Forgot Password?</span></Link>
             </form>
         </div>
     );
