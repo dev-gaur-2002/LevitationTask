@@ -15,7 +15,7 @@ const BasicForm:React.FC = () => {
 
   return (
     <div>
-      <form onSubmit={(e)=>handleSubmit(e)}>
+      <form onSubmit={(e)=>handleSubmit(e)} className=''>
         <label htmlFor="username">username</label>
         <input type="text" name='username'  onChange={(e)=>{setFormData({...formData,name:e.target.value})}} />
         <label htmlFor="email">Email</label>
