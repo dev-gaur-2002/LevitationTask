@@ -47,8 +47,8 @@ const LoginForm:React.FC = () => {
     return (
         <div className="container flex justify-center items-center min-h-screen mb-10">
             <div className="flex flex-col subContainer">
-                <div className="mb-16 text-slate-600">
-                    Login System
+                <div className="heading">
+                    Login Form
                 </div>
                 <form onSubmit={(e)=>handleSubmit(e)} action="/dashboard">
                     <div className=" relative flex flex-row w-full mb-4">
@@ -59,8 +59,8 @@ const LoginForm:React.FC = () => {
                     <div className="flex flex-row w-full mb-4">
                         <input type="password" placeholder="Enter Your Password" name='password' value={password} onChange={(e)=>setPassword(e.target.value)} className="input-form"/>
                     </div>
-                    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded mb-4 ">Login</button>
-                    <Link to='/forgot'><div className="text-slate-600"> Forgot Password?</div></Link>
+                    <button type="submit" className="form-btn">Login</button>
+                    <Link to='/forgot'><div className="text-slate-600 underline decoration-sky-500"> Forgot Password?</div></Link>
                 </form>
             </div>
         </div>

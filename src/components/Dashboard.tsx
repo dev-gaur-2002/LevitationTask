@@ -9,9 +9,10 @@ import Success from './Forms/Success'
 const Dashboard:React.FC = () => {
   const {status,setStatus} = useContext(ProgressContext)
   return (
-    <div>
+    <div >
         {
           (status === 'step1')?(
+            
             <BasicForm />
           ):(status === 'step2')?(
             <AddressForm/>
