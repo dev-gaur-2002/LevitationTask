@@ -1,12 +1,14 @@
 import React, {useContext,useState} from 'react'
 import { ProgressContext } from '../../App'
 import {useGeolocated} from 'react-geolocated'
+import { formModel } from './model'
 import axios from 'axios'
 
 const MultileFileAndGeolocation:React.FC = () => {
   const {status,setStatus,formData,setFormData} = useContext(ProgressContext)
   const [present,setPresent] = useState<boolean>(false)
 
+ 
   
   const {coords,isGeolocationAvailable,isGeolocationEnabled} = useGeolocated({
     positionOptions: {
@@ -24,18 +26,13 @@ const MultileFileAndGeolocation:React.FC = () => {
     setFormData({...formData,geolocation:'latitude '+coords?.latitude+' longitude '+coords?.longitude})
     console.log(formData)
 
-    const json = JSON.stringify(formData);
-  const blob = new Blob([json], {
-  type: 'application/json'
-    });
-    const data = new FormData();
-    data.append("document", blob);
-    console.log(data)
+    // const form_data = objectToFormData(formData)
+
 
     axios({
       method: 'post',
       url: 'https://x8ki-letl-twmt.n7.xano.io/api:XooRuQbs/form',
-      data: data,
+      data: formData,
       headers: {
           'Content-Type': 'multipart/form-data',
           'Access-Control-Allow-Origin': '*',

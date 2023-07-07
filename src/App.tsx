@@ -9,7 +9,7 @@ import { formModel } from './components/Forms/model'
 export const ProgressContext = createContext({status:"",setStatus:(status:string)=>{},formData:{},setFormData:(FormData:formModel)=>{}})
 
 const App:React.FC = () => {
-  const [formData,setFormData] = useState<formModel>({})
+  const [formData,setFormData] = useState<any>({})
   const [status,setStatus] = useState<string>("step1");
 
   return (
