@@ -1,0 +1,16 @@
+export interface formModel{
+    name?:string,
+    email?:string,
+    phone_number?:number,
+    address_1?:string,
+    address_2?:string,
+    city?:string,
+    state?:string,
+    pincode?:number,
+    country?:string,
+    geolocation?:string,
+    singleFile?:string,
+    multi_ups1?:string,
+    multi_ups2?:string,
+    multi_ups3?:string,
+}
